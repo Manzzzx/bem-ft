@@ -56,11 +56,11 @@ export function Footer() {
         © {new Date().getFullYear()} BEM Fakultas Teknik. All rights reserved. <br />
         Created with <span className="text-pink-500">❤️</span> by{" "}
         <Link
-          href="https://github.com/manzzx"
+          href="https://github.com/manzzzx"
           className="text-blue-600 hover:underline"
           target="_blank"
         >
-          Manzzx
+          Manzzzx
         </Link>
       </div>
     </footer>
