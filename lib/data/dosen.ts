@@ -1,22 +1,22 @@
-import type { Dosen } from "@/types";
+import type { Dosen } from "@/types/dosen";
 
-export const dosenTeknik: Dosen[] = [
+export const dosenList: Dosen[] = [
   {
-    nama: "Dr. Abdul Khamid, S.T., M.T.",
-    jabatan: "Dekan",
-    foto: "/images/dosen/abdul-khamid.jpg",
-    bio: "Dekan Fakultas Teknik yang memiliki kepakaran dalam teknologi struktur dan manajemen pendidikan tinggi."
+    name: "Dr. Abdul Khamid",
+    department: "Teknik",
+    academicTitle: "S.T., M.T",
+    position: "Dekan Fakultas Teknik",
   },
   {
-    nama: "Bambang Irawan, S.Kom., M.Kom.",
-    jabatan: "Kaprodi TI",
-    foto: "/images/dosen/bambang-irawan.jpg",
-    bio: "Kepala Program Studi Teknik Informatika yang berfokus pada pengembangan sistem informasi dan rekayasa perangkat lunak."
+    name: "Bambang Irawan",
+    department: "Teknik Informatika",
+    academicTitle: "S.Kom., M.Kom",
+    position: "Kaprodi Teknik Informatika",
   },
   {
-    nama: "Muhamad Yunus, S.T., M.T.",
-    jabatan: "Kaprodi TS",
-    foto: "/images/dosen/muhamad-yunus.jpg",
-    bio: "Kepala Program Studi Teknik Sipil dengan pengalaman dalam desain dan manajemen proyek infrastruktur."
-  }
+    name: "Muhamad Yunus",
+    department: "Teknik Sipil",
+    academicTitle: "S.T., M.T",
+    position: "Kaprodi Teknik Sipil",
+  },
 ];

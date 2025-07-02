@@ -1,5 +1,4 @@
 import type { SocialMedia } from "@/types";
-import { Icon } from "@iconify/react";
 
 
 export const socialLinks: SocialMedia[] = [

@@ -1,57 +1,54 @@
-import type { Divisi } from "@/types";
+// data/divisi.ts
 
-export const divisiBEM: Divisi[] = [
+import type { Division } from "@/types/divisi";
+
+export const divisions: Division[] = [
   {
-    nama: "BPH (Badan Pengurus Harian)",
-    deskripsi: "Mengkoordinasikan seluruh kegiatan BEM dan memastikan visi organisasi tercapai.",
-    ketua: "Alvin Satrio Purnomo",
-    anggota: [
-      "Aisyah Romadhona",
-      "Luna Audya Faradila",
-      "Nabila Rizqi Maulida",
-      "Shinta Nuriyah"
-    ]
+    name: "BPH (Badan Pengurus Harian)",
+    coordinator: "Alvin Satrio Purnomo",
+    members: [
+      { name: "Aisyah Romadhona", role: "Sekretaris Umum" },
+      { name: "Luna Audya Faradila", role: "Sekretaris Umum" },
+      { name: "Nabila Rizqi Maulida", role: "Bendahara Umum" },
+      { name: "Shinta Nuriyah", role: "Bendahara Umum" },
+    ],
   },
   {
-    nama: "PSDM (Pengembangan Sumber Daya Manusia)",
-    deskripsi: "Membina, mengembangkan potensi dan kapasitas anggota serta kaderisasi.",
-    ketua: "Moch. Malik Badly Ba'adilah",
-    anggota: [
-      "Fatkhul Arifin",
-      "Ibnu Fikri Haikal",
-      "Aldi Alfariz",
-      "Nur Salma Salsabila"
-    ]
+    name: "PSDM (Pengembangan Sumber Daya Manusia)",
+    coordinator: "Moch.Malik Badly Ba'adilah",
+    members: [
+      { name: "Fatkhul Arifin" },
+      { name: "Ibnu Fikri Haikal" },
+      { name: "Aldi Alfariz" },
+      { name: "Nur Salma Salsabila" },
+    ],
   },
   {
-    nama: "Infokom (Informasi dan Komunikasi)",
-    deskripsi: "Menyampaikan informasi internal dan eksternal serta pengelolaan media komunikasi.",
-    ketua: "Akhmad Faridin",
-    anggota: [
-      "Ramadhan Saputra",
-      "Rifqoh Nur Nafi'ah",
-      "Mas Roro Tasya Y"
-    ]
+    name: "Infokom (Informasi dan Komunikasi)",
+    coordinator: "Akhmad Faridin",
+    members: [
+      { name: "Ramadhan Saputra" },
+      { name: "Rifqoh Nur Nafi'ah" },
+      { name: "Mas Roro Tasya Y" },
+    ],
   },
   {
-    nama: "Humas (Hubungan Masyarakat)",
-    deskripsi: "Menjalin relasi dengan pihak eksternal dan menjaga citra organisasi.",
-    ketua: "Aldi Ferdiansyah",
-    anggota: [
-      "Slamet Sugiarto",
-      "M. Helmi Mustaqim",
-      "Nazarul Ali Mukhtar",
-      "Ahmad Iwan Gunawan"
-    ]
+    name: "Humas (Hubungan Masyarakat)",
+    coordinator: "Aldi Ferdiansyah",
+    members: [
+      { name: "Slamet Sugiarto" },
+      { name: "M. Helmi Mustaqim" },
+      { name: "Nazarul Ali Mukhtar" },
+      { name: "Ahmad Iwan Gunawan" },
+    ],
   },
   {
-    nama: "Minbak (Minat dan Bakat)",
-    deskripsi: "Fasilitasi dan pengembangan minat serta bakat mahasiswa melalui kegiatan positif.",
-    ketua: "M. Idi Salis",
-    anggota: [
-      "Refy Azhar Muzaki",
-      "Ahmad Faiz Abidin",
-      "Naufal Hilmiya Faiq"
-    ]
-  }
+    name: "Minbak (Minat dan Bakat)",
+    coordinator: "M. Idi Salis",
+    members: [
+      { name: "Refy Azhar Muzaki" },
+      { name: "Ahmad Faiz Abidin" },
+      { name: "Naufal Hilmiya Faiq" },
+    ],
+  },
 ];

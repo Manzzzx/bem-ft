@@ -1,6 +1,7 @@
 export interface Ketua {
-  nama: string;
-  periode: string;
-  foto: string;
-  deskripsi?: string;
+  name: string;
+  year: number;
+  kabinet?: string;
+  motto?: string;
+  imageUrl?: string;
 }

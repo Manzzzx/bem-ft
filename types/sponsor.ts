@@ -1,5 +1,5 @@
 export interface Sponsor {
-  nama: string;
+  name: string;
   logo: string;
   url?: string;
 }

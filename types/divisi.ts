@@ -1,7 +1,10 @@
-export interface Divisi {
-  nama: string;
-  deskripsi: string;
-  ketua: string;
-  anggota: string[];
-  icon?: string;
+export interface DivisionMember {
+  name: string;
+  role?: string;
+}
+
+export interface Division {
+  name: string;
+  coordinator: string;
+  members: DivisionMember[];
 }
