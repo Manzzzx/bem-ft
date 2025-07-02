@@ -1,7 +1,7 @@
 export const navLinks = [
   { title: "Tentang", href: "/tentang" },
   { title: "Pengurus", href: "/pengurus" },
-  { title: "PMB", href: "/pmb-teknik" },
+  { title: "PMB-Teknik", href: "/pmb-teknik" },
   { title: "Dosen", href: "/dosen" },
   { title: "Kontak", href: "/kontak" },
 ];

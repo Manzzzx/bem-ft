@@ -1,4 +1,6 @@
 import type { SocialMedia } from "@/types";
+import { Icon } from "@iconify/react";
+
 
 export const socialLinks: SocialMedia[] = [
   {
@@ -7,15 +9,16 @@ export const socialLinks: SocialMedia[] = [
   },
   {
     platform: "Email",
-    url: "mailto:bemft@example.com",
+    url: "mailto:bemft@gmail.com",
   },
   {
     platform: "LinkedIn",
     url: "https://linkedin.com/company/bem-ft",
   },
 ];
+
 export const socialIcons: Record<string, string> = {
-  Instagram: "i-logos-instagram",
-  Email: "i-logos-email",
-  LinkedIn: "i-logos-linkedin",
+  Instagram: "mdi:instagram",
+  Email: "mdi:email-outline",
+  LinkedIn: "mdi:linkedin",
 };
