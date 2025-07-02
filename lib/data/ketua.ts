@@ -1,20 +1,18 @@
-// data/ketua.ts
-
-import type { Ketua } from "@/types/ketua";
+import type { Ketua } from "@/lib/types/ketua";
 
 export const ketuaList: Ketua[] = [
   {
     name: "Alvin Satrio Purnomo",
-    year: 2024,
+    year: 2024 / 2025,
     kabinet: "Kabinet Karya Nyata",
     motto: "Kolaborasi untuk Aksi, Aksi untuk Perubahan",
-    imageUrl: "/images/kabinet-2024.jpg",
+    imageUrl: "/images/alvin.jpg",
   },
   {
-    name: "Bagus Rahmatullah",
-    year: 2023,
+    name: "Rizalul Zikri",
+    year: 2023 / 2024,
     kabinet: "Kabinet Harmoni Teknik",
     motto: "Solid, Sinergis, Solutif",
-    imageUrl: "/images/kabinet-2023.jpg",
-  }
+    imageUrl: "/images/jalul.jpg",
+  },
 ];

@@ -1,5 +1,4 @@
-import type { SocialMedia } from "@/types";
-
+import type { SocialMedia } from "@/lib/types";
 
 export const socialLinks: SocialMedia[] = [
   {

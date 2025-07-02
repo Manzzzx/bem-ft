@@ -1,4 +1,4 @@
-import type { NavLink } from "@/types/nav";
+import type { NavLink } from "@/lib/types/nav";
 
 export const navLinks: NavLink[] = [
   { title: "Tentang", href: "/tentang" },

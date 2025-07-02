@@ -4,10 +4,9 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle } from "@/components/ui/sheet";
-import { socialLinks, socialIcons } from "@/constants/social";
-import { navLinks } from "@/constants/nav";
+import { socialLinks, socialIcons } from "@/lib/constants/social";
+import { navLinks } from "@/lib/constants/nav";
 import { Icon } from "@iconify/react";
-
 
 export default function Navbar() {
   return (

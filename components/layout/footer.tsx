@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { footerLinks } from "@/constants/nav";
-import { socialLinks } from "@/constants/social";
+import { footerLinks } from "@/lib/constants/nav";
+import { socialLinks } from "@/lib/constants/social";
 import { Icon } from "@iconify/react";
 
 export function Footer() {
@@ -14,10 +14,7 @@ export function Footer() {
           <ul className="space-y-2">
             {footerLinks.map((link) => (
               <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="hover:text-blue-600 transition-colors"
-                >
+                <Link href={link.href} className="hover:text-blue-600 transition-colors">
                   {link.title}
                 </Link>
               </li>
@@ -30,13 +27,7 @@ export function Footer() {
           <h3 className="text-sm font-semibold text-slate-900 mb-3">Media Sosial</h3>
           <div className="flex gap-4">
             {socialLinks.map((social) => (
-              <Link
-                key={social.platform}
-                href={social.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xl hover:text-blue-600 transition-colors"
-              >
+              <Link key={social.platform} href={social.url} target="_blank" rel="noopener noreferrer" className="text-xl hover:text-blue-600 transition-colors">
                 <Icon icon={`mdi:${social.platform.toLowerCase()}`} />
               </Link>
             ))}
@@ -55,11 +46,7 @@ export function Footer() {
       <div className="border-t py-4 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} BEM Fakultas Teknik. All rights reserved. <br />
         Created with <span className="text-pink-500">❤️</span> by{" "}
-        <Link
-          href="https://github.com/manzzzx"
-          className="text-blue-600 hover:underline"
-          target="_blank"
-        >
+        <Link href="https://github.com/manzzzx" className="text-blue-600 hover:underline" target="_blank">
           Manzzzx
         </Link>
       </div>

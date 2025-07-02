@@ -1,11 +1,10 @@
-import type { CampusInfo } from "@/types/site";
+import type { CampusInfo } from "@/lib/types/site";
 
 export const campusInfo: CampusInfo = {
   name: "Universitas Muhadi Setiabudi",
   faculty: "Fakultas Teknik",
   abbreviation: "BEM FT",
-  description:
-    "Organisasi Mahasiswa Fakultas Teknik yang bergerak dalam bidang kolaborasi, inovasi, dan aksi nyata.",
+  description: "Organisasi Mahasiswa Fakultas Teknik yang bergerak dalam bidang kolaborasi, inovasi, dan aksi nyata.",
   contact: {
     email: "bem.ft@example.com",
     phone: "+62 8773 3207 373",
