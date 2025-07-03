@@ -1,4 +1,3 @@
-// components/layout/footer.tsx
 import Link from "next/link";
 import { footerLinks } from "@/lib/constants/nav";
 import { socialLinks, socialIcons } from "@/lib/constants/social";
@@ -7,7 +6,7 @@ import { campusInfo } from "@/lib/constants/info";
 
 export function Footer() {
   return (
-    <footer className="border-t bg-background text-muted-foreground mt-16">
+    <footer className="border-t bg-muted text-muted-foreground mt-16">
       <div className="max-w-screen-xl mx-auto  px-4 sm:px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-3 gap-10 py-12 items-start">
         {/* Navigasi */}
         <div>
@@ -19,7 +18,7 @@ export function Footer() {
               <li key={link.href}>
                 <Link
                   href={link.href}
-                  className="text-sm hover:text-primary transition-colors"
+                  className="text-sm hover:text-blue-600 hover:underline hover:dark:text-chart-3 dark:hover:underline transition-colors"
                 >
                   {link.title}
                 </Link>
@@ -71,7 +70,7 @@ export function Footer() {
       {/* Bottom Bar */}
       <div className="border-t py-4 text-center text-xs text-muted-foreground">
         <span>
-          © {new Date().getFullYear()} BEM Fakultas Teknik <br /> Created By <span className="text-pink-500">❤️</span> with{" "}
+          © {new Date().getFullYear()} BEM Fakultas Teknik <br /> Created With <span className="text-pink-500">❤️</span> By{" "}
           <Link
             href="https://github.com/manzzzx"
             target="_blank"
