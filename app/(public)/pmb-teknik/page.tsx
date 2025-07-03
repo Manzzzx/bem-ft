@@ -1,55 +1,63 @@
-import { Container } from "@/components/layout/container";
-import { PageHeader } from "@/components/layout/page-header";
+"use client";
 
-import { studyPrograms, admissionPaths, tuitionFees } from "@/lib/data/akademik";
-import type { StudyProgram, AdmissionPath, TuitionFee } from "@/lib/types/akademik";
+import { studyPrograms } from "@/lib/data/akademik";
+import { admissionPaths } from "@/lib/data//akademik";
+import { tuitionFees } from "@/lib/data//akademik";
+import { Card, CardContent } from "@/components/ui/card";
+import { formatIDR } from "@/lib/utils/formatter";
 
-export default function PMBTeknikPage() {
+export default function PmbTeknikPage() {
   return (
-    <Container className="py-10 space-y-10">
-      <PageHeader title="Penerimaan Mahasiswa Baru" description="Informasi lengkap tentang prodi, jalur masuk, dan biaya pendidikan di Fakultas Teknik." />
+    <main className="py-20">
+      <div className="container mx-auto px-4 md:px-6 space-y-20">
 
-      {/* Program Studi */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Program Studi</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          {studyPrograms.map((prodi: StudyProgram) => (
-            <div key={prodi.code} className="border rounded-xl p-4 shadow hover:shadow-md transition">
-              <h3 className="text-xl font-bold">{prodi.name}</h3>
-              <p>Akreditasi: {prodi.accreditation}</p>
-              <p>Gelar: {prodi.degree}</p>
-              <p>Kaprodi: {prodi.headOfProgram}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+        <section className="space-y-2">
+          <h1 className="text-3xl font-bold text-foreground">Penerimaan Mahasiswa Baru</h1>
+          <p className="text-muted-foreground text-base max-w-prose">
+            Informasi lengkap seputar jalur masuk, program studi, dan rincian biaya kuliah untuk Fakultas Teknik UMUS.
+          </p>
+        </section>
 
-      {/* Jalur Masuk */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Jalur Masuk</h2>
-        <ul className="list-disc pl-5 space-y-2">
-          {admissionPaths.map((path: AdmissionPath, idx: number) => (
-            <li key={idx}>
-              <strong>{path.name}</strong>: {path.description}
-            </li>
-          ))}
-        </ul>
-      </section>
+        <section>
+          <h2 className="text-xl font-semibold text-foreground mb-4">Jalur Masuk</h2>
+          <ul className="grid gap-4 md:grid-cols-3">
+            {admissionPaths.map((path) => (
+              <li key={path.name} className="rounded-lg bg-secondary p-4">
+                <p className="font-medium text-primary">{path.name}</p>
+                <p className="text-sm text-muted-foreground mt-1">{path.description}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
 
-      {/* Biaya Pendidikan */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-4">Biaya Pendidikan</h2>
-        <div className="grid md:grid-cols-2 gap-4">
-          {tuitionFees.map((fee: TuitionFee, idx: number) => (
-            <div key={idx} className="border rounded-xl p-4 shadow hover:shadow-md transition">
-              <p>Uang Pendaftaran: Rp{fee.registrationFee.toLocaleString()}</p>
-              <p>SPP per Semester: Rp{fee.perSemester.toLocaleString()}</p>
-              <p>Biaya Awal: Rp{fee.initialFee.toLocaleString()}</p>
-              <p>Total per Tahun: Rp{fee.annualTotal.toLocaleString()}</p>
-            </div>
+        <section>
+          <h2 className="text-xl font-semibold text-foreground mb-4">Program Studi</h2>
+          <div className="grid gap-6 sm:grid-cols-2">
+            {studyPrograms.map((prodi) => (
+              <Card key={prodi.code}>
+                <CardContent className="p-5 space-y-1">
+                  <h3 className="text-lg font-semibold">{prodi.name}</h3>
+                  <p className="text-sm text-muted-foreground">{prodi.degree} • Akreditasi: {prodi.accreditation}</p>
+                  <p className="text-sm text-muted-foreground">Kaprodi: {prodi.headOfProgram}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-foreground mb-4">Biaya Kuliah</h2>
+          {tuitionFees.map((fee, idx) => (
+            <ul key={idx} className="grid gap-2 text-sm text-muted-foreground">
+              <li>💰 Biaya Pendaftaran: <strong>{formatIDR(fee.registrationFee)}</strong></li>
+              <li>🎓 Biaya Awal Masuk: <strong>{formatIDR(fee.initialFee)}</strong></li>
+              <li>📚 SPP / Semester: <strong>{formatIDR(fee.perSemester)}</strong></li>
+              <li>📅 Total per Tahun: <strong>{formatIDR(fee.annualTotal)}</strong></li>
+            </ul>
           ))}
-        </div>
-      </section>
-    </Container>
+        </section>
+
+      </div>
+    </main>
   );
 }
