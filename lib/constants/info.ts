@@ -1,4 +1,4 @@
-import type { CampusInfo } from "@/lib/types/site";
+import type { CampusInfo } from "@/lib/types/info";
 
 export const campusInfo: CampusInfo = {
   name: "Universitas Muhadi Setiabudi",
