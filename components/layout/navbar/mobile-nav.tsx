@@ -28,7 +28,7 @@ export default function MobileNav({ links }: { links: NavItem[] }) {
 
         <nav className="flex flex-col space-y-4">
           {links.map((link) => (
-            <Link key={link.href} href={link.href} className="text-base font-medium text-slate-700 dark:text-slate-200 hover:text-blue-600 dark:hover:text-chart-3 dark:hover:underline transition-colors">
+            <Link key={link.href} href={link.href} className="text-base font-medium text-slate-700 dark:text-slate-200 hover:text-chart-5 hover:underline dark:hover:text-chart-3 dark:hover:underline transition-colors">
               {link.title}
             </Link>
           ))}

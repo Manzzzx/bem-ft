@@ -121,8 +121,35 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    scrollbar-width: none;
   }
+
   body {
     @apply bg-background text-foreground;
+    -ms-overflow-style: none;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@layer utilities {
+  .scroll-hide {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .scroll-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scroll-default {
+    scrollbar-width: auto;
+    -ms-overflow-style: auto;
+  }
+
+  .scroll-default::-webkit-scrollbar {
+    display: initial;
   }
 }
