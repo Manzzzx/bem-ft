@@ -21,7 +21,7 @@ export function Footer() {
                 />
               </div>
               <div>
-                <h3 className="text-lg font-bold text-foreground">BEM FT</h3>
+                <h3 className="text-lg font-bold text-blue-600 dark:text-blue-400">BEM FT</h3>
               </div>
             </div>
             <p className="text-sm text-muted-foreground">

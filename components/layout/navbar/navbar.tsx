@@ -8,10 +8,13 @@ import MobileNav from "./mobile-nav";
 
 export default function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/90 dark:bg-gray-950/90 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800 shadow-sm">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white/95 dark:bg-slate-950/95 backdrop-blur-md border-b border-slate-200/80 dark:border-slate-800/80 shadow-sm">
       <div className="container mx-auto relative flex items-center justify-between h-16 px-4 md:px-6">
         {/* Logo */}
-        <Link href="/" className="text-xl font-bold text-blue-600 dark:text-blue-400">
+        <Link 
+          href="/" 
+          className="text-xl font-bold text-blue-600 dark:text-blue-400 transition-colors duration-200"
+        >
           BEM FT
         </Link>
 
@@ -26,7 +29,8 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Menu */}
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <MobileNav links={navLinks} />
         </div>
       </div>
