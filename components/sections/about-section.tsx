@@ -7,6 +7,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { motion, easeOut, Variants } from "framer-motion";
 import { ArrowRight, Eye, Target } from "lucide-react";
 import Link from "next/link";
+import { sponsors } from "@/lib/data/sponsor";
 
 export default function AboutSection() {
   const containerVariants: Variants = {
@@ -43,6 +44,8 @@ export default function AboutSection() {
       }
     }
   };
+
+
 
   return (
     <section className="w-full py-16 md:py-24 bg-background">
@@ -174,7 +177,7 @@ export default function AboutSection() {
                       Menjadi sarana bagi mahasiswa Fakultas Teknik untuk mengembangkan potensi.
                     </li>
                     <li className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Menjadikan seluruh keluarga mahasiswa Fakultas Teknik menjadi solid dan terarah.
+                      Menjadikan seluruh keluarga mahasiswa Fakultas Teknik menjadi solid dan terarah.
                     </li>
                     <Link href="/tentang">
                       <Button 
@@ -193,6 +196,74 @@ export default function AboutSection() {
           </motion.div>
         </motion.div>
       </Container>
+
+      <div className="w-full mt-32 space-y-8 overflow-hidden">
+        <div className="relative w-full overflow-hidden py-2">
+          <motion.div
+            animate={{
+              x: ["-50%", "0%"]
+            }}
+            transition={{
+              duration: 25,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="flex items-center gap-32 whitespace-nowrap"
+          >
+            {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+              <a
+                key={`top-${index}`}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-300"
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                  {sponsor.name}
+                </span>
+              </a>
+            ))}
+          </motion.div>
+        </div>
+
+        <div className="relative w-full overflow-hidden py-6">
+          <motion.div
+            animate={{
+              x: ["0%", "-50%"]
+            }}
+            transition={{
+              duration: 30,
+              repeat: Infinity,
+              ease: "linear"
+            }}
+            className="flex items-center gap-32 whitespace-nowrap"
+          >
+            {[...sponsors, ...sponsors, ...sponsors].map((sponsor, index) => (
+              <a
+                key={`bottom-${index}`}
+                href={sponsor.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:opacity-80 transition-opacity duration-400"
+              >
+                <img
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  className="w-8 h-8 object-contain"
+                />
+                <span className="text-lg font-medium text-gray-700 dark:text-gray-300">
+                  {sponsor.name}
+                </span>
+              </a>
+            ))}
+          </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

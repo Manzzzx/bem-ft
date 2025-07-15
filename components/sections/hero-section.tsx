@@ -152,7 +152,7 @@ export default function HeroSection() {
     >
       <GridBackground />
       
-      <Container className="relative z-10 flex flex-col-reverse items-center justify-between gap-16 md:flex-row px-4 md:px-6 lg:px-8">
+      <Container className="relative z-10 flex flex-col-reverse items-center justify-between gap-12 md:flex-row px-4 md:px-6 lg:px-8">
         <motion.div 
           variants={itemVariants}
           className="flex-1 space-y-10 text-center md:text-left max-w-2xl"
@@ -165,14 +165,6 @@ export default function HeroSection() {
               <br />
               <span className="text-primary">UMUS 2025</span>
             </h1>
-            <motion.div 
-              variants={itemVariants}
-              className="relative"
-            >
-              <h2 className="text-xl md:text-2xl font-semibold mb-2">
-                "<span className="text-blue-600">SAHITYA</span> <span className="text-amber-500">BHAVANA</span>"
-              </h2>
-            </motion.div>
           </motion.div>
           
           <motion.p
@@ -187,9 +179,9 @@ export default function HeroSection() {
           variants={imageVariants}
           className="flex-1 relative px-4 md:px-8"
         >
-          <div className="relative max-w-lg mx-auto">
+          <div className="relative max-w-sm mx-auto">
             <motion.div 
-              className="absolute -top-8 -left-8 w-80 h-80 bg-gradient-to-br from-primary/8 to-blue-400/8 rounded-full blur-3xl"
+              className="absolute -top-6 -left-6 w-60 h-60 bg-gradient-to-br from-primary/8 to-blue-400/8 rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.1, 1],
                 opacity: [0.4, 0.7, 0.4],
@@ -202,7 +194,7 @@ export default function HeroSection() {
               }}
             />
             <motion.div 
-              className="absolute -bottom-8 -right-8 w-56 h-56 bg-gradient-to-br from-blue-400/10 to-primary/10 rounded-full blur-2xl"
+              className="absolute -bottom-6 -right-6 w-40 h-40 bg-gradient-to-br from-blue-400/10 to-primary/10 rounded-full blur-2xl"
               animate={{
                 scale: [1, 1.3, 1],
                 opacity: [0.3, 0.6, 0.3],
@@ -231,7 +223,7 @@ export default function HeroSection() {
               <motion.img
                 src="/logos/logo.png"
                 alt="Logo BEM FT UMUS 2025"
-                className="relative z-10 w-full h-auto max-h-[500px] object-contain filter drop-shadow-2xl"
+                className="relative z-10 w-full h-auto max-w-xs max-h-80 object-contain filter drop-shadow-2xl"
                 whileHover={{ 
                   scale: 1.05, 
                   rotate: [0, 1, -1, 0],
