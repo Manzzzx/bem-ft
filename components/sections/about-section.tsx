@@ -64,7 +64,7 @@ export default function AboutSection() {
                   className="relative overflow-hidden rounded-xl shadow-lg"
                 >
                   <img
-                    src="https://picsum.photos/500/400"
+                    src="/images/about/about.jpg"
                     alt="BEM FT - Bersama Membangun Masa Depan"
                     className="w-full h-auto object-cover"
                   />

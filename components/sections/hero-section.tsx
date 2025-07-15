@@ -3,7 +3,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Container } from '@/components/layout/container';
-import Image from 'next/image';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -11,42 +10,43 @@ const containerVariants: Variants = {
     opacity: 1,
     transition: {
       duration: 0.6,
-      staggerChildren: 0.2
+      staggerChildren: 0.15
     }
   }
 };
 
 const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
+  hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.6,
+      duration: 0.8,
       ease: [0.25, 0.1, 0.25, 1] 
     }
   }
 };
 
 const titleVariants: Variants = {
-  hidden: { opacity: 0, x: -50 },
+  hidden: { opacity: 0, x: -60 },
   visible: {
     opacity: 1,
     x: 0,
     transition: {
-      duration: 0.8,
+      duration: 1,
       ease: [0.25, 0.1, 0.25, 1] 
     }
   }
 };
 
 const imageVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
+  hidden: { opacity: 0, scale: 0.7, rotate: -10 },
   visible: {
     opacity: 1,
     scale: 1,
+    rotate: 0,
     transition: {
-      duration: 0.8,
+      duration: 1.2,
       ease: [0.25, 0.1, 0.25, 1] 
     }
   }
@@ -54,50 +54,84 @@ const imageVariants: Variants = {
 
 const GridBackground = () => (
   <div className="absolute inset-0 overflow-hidden pointer-events-none">
-    <div className="absolute inset-0 bg-grid-pattern opacity-[0.03] dark:opacity-[0.05]"></div>
+    {/* Main grid pattern */}
     <div 
       className="absolute inset-0"
       style={{
         backgroundImage: `
-          linear-gradient(rgba(147, 197, 253, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(147, 197, 253, 0.03) 1px, transparent 1px)
+          linear-gradient(rgba(147, 197, 253, 0.12) 2px, transparent 2px),
+          linear-gradient(90deg, rgba(147, 197, 253, 0.12) 2px, transparent 2px)
         `,
-        backgroundSize: '50px 50px'
+        backgroundSize: '60px 60px'
       }}
     />
+    {/* Subtle overlay grid */}
+    <div 
+      className="absolute inset-0 dark:opacity-0 opacity-20"
+      style={{
+        backgroundImage: `
+          linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px)
+        `,
+        backgroundSize: '30px 30px'
+      }}
+    />
+    
+    {/* Enhanced floating elements */}
     <motion.div 
-      className="absolute top-20 left-10 w-20 h-20 bg-primary/5 rounded-full blur-xl"
+      className="absolute top-10 left-20 w-32 h-32 bg-gradient-to-br from-primary/8 to-blue-400/8 rounded-full blur-2xl"
       animate={{
-        scale: [1, 1.2, 1],
-        opacity: [0.3, 0.6, 0.3]
+        scale: [1, 1.3, 1],
+        opacity: [0.4, 0.8, 0.4],
+        x: [0, 20, 0],
+        y: [0, -10, 0]
       }}
       transition={{
-        duration: 4,
+        duration: 8,
         repeat: Infinity,
         ease: "easeInOut"
       }}
     />
     <motion.div 
-      className="absolute top-40 right-20 w-32 h-32 bg-blue-400/5 rounded-full blur-xl"
+      className="absolute top-1/3 right-10 w-20 h-20 bg-gradient-to-br from-blue-400/10 to-primary/10 rounded-full blur-xl"
       animate={{
-        scale: [1, 1.3, 1],
-        opacity: [0.2, 0.5, 0.2]
+        scale: [1, 1.4, 1],
+        opacity: [0.3, 0.7, 0.3],
+        x: [0, -15, 0],
+        y: [0, 15, 0]
       }}
       transition={{
-        duration: 5,
+        duration: 6,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: 2
+      }}
+    />
+    <motion.div 
+      className="absolute bottom-1/4 left-10 w-24 h-24 bg-gradient-to-br from-primary/6 to-blue-400/6 rounded-full blur-xl"
+      animate={{
+        scale: [1, 1.2, 1],
+        opacity: [0.5, 0.9, 0.5],
+        x: [0, 10, 0],
+        y: [0, -20, 0]
+      }}
+      transition={{
+        duration: 10,
         repeat: Infinity,
         ease: "easeInOut",
         delay: 1
       }}
     />
+    
+    {/* Additional accent elements */}
     <motion.div 
-      className="absolute bottom-20 left-1/4 w-24 h-24 bg-primary/5 rounded-full blur-xl"
+      className="absolute top-2/3 right-1/3 w-16 h-16 bg-gradient-to-br from-blue-400/5 to-primary/5 rounded-full blur-lg"
       animate={{
         scale: [1, 1.1, 1],
-        opacity: [0.4, 0.7, 0.4]
+        opacity: [0.6, 1, 0.6]
       }}
       transition={{
-        duration: 3,
+        duration: 4,
         repeat: Infinity,
         ease: "easeInOut",
         delay: 0.5
@@ -114,110 +148,98 @@ export default function HeroSection() {
       initial="hidden"
       animate="visible"
       variants={containerVariants}
-      className="relative w-full min-h-screen py-20 md:py-28 flex items-center bg-gradient-to-br from-background via-background to-primary/5 overflow-hidden"
+      className="relative w-full min-h-screen py-20 md:py-28 flex items-center bg-gradient-to-br from-background via-background to-primary/3 dark:bg-gradient-to-br dark:from-background dark:via-background dark:to-background overflow-hidden"
     >
       <GridBackground />
       
-      <Container className="relative z-10 flex flex-col-reverse items-center justify-between gap-12 md:flex-row">
+      <Container className="relative z-10 flex flex-col-reverse items-center justify-between gap-16 md:flex-row px-4 md:px-6 lg:px-8">
         <motion.div 
           variants={itemVariants}
-          className="flex-1 space-y-8 text-center md:text-left"
+          className="flex-1 space-y-10 text-center md:text-left max-w-2xl"
         >
-          <motion.h1
-            variants={titleVariants}
-            className="text-4xl font-bold tracking-tight text-primary md:text-5xl lg:text-6xl"
-          >
-            BEM FT: <span className="text-blue-400">Suara Mahasiswa</span>,
-            <br className="hidden md:block" />
-            <span className="text-blue-400">Wadah Perubahan</span>
-          </motion.h1>
+          <motion.div variants={titleVariants} className="space-y-4">
+            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl lg:text-6xl xl:text-7xl">
+              <span className="bg-blue-600 bg-clip-text text-transparent">
+                BEM FT
+              </span>
+              <br />
+              <span className="text-primary">UMUS 2025</span>
+            </h1>
+            <motion.div 
+              variants={itemVariants}
+              className="relative"
+            >
+              <h2 className="text-xl md:text-2xl font-semibold mb-2">
+                "<span className="text-blue-600">SAHITYA</span> <span className="text-amber-500">BHAVANA</span>"
+              </h2>
+            </motion.div>
+          </motion.div>
           
           <motion.p
             variants={itemVariants}
-            className="text-muted-foreground max-w-xl text-base md:text-lg leading-relaxed"
+            className="text-muted-foreground max-w-2xl text-base md:text-lg lg:text-xl leading-relaxed"
           >
             Kami hadir untuk menyuarakan semangat inovasi, memperkuat solidaritas, dan mewujudkan program kerja yang berdampak nyata bagi mahasiswa teknik.
           </motion.p>
-          
-          {/* Buttons */}
-          <motion.div
-            variants={itemVariants}
-            className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
-          >
-            <motion.a 
-              href="/tentang" 
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-black bg-primary px-8 py-4 text-base font-semibold text-black shadow-lg transition-all duration-300 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-primary/50 overflow-hidden"
-              onMouseEnter={() => setHoveredButton('primary')}
-              onMouseLeave={() => setHoveredButton(null)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Kenali Kami</span>
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-blue-400 to-primary"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: hoveredButton === 'primary' ? 1 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-            
-            <motion.a 
-              href="/pengurus" 
-              className="group relative inline-flex w-full sm:w-auto items-center justify-center rounded-lg border border-black bg-primary px-8 py-4 text-base font-semibold text-black transition-all duration-300 hover:bg-primary hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-primary/30 overflow-hidden"
-              onMouseEnter={() => setHoveredButton('secondary')}
-              onMouseLeave={() => setHoveredButton(null)}
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <span className="relative z-10">Lihat Divisi</span>
-              <motion.div 
-                className="absolute inset-0 bg-gradient-to-r from-blue-400 to-primary"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: hoveredButton === 'secondary' ? 1 : 0 }}
-                transition={{ duration: 0.3 }}
-              />
-            </motion.a>
-          </motion.div>
         </motion.div>
 
         <motion.div
           variants={imageVariants}
-          className="flex-1 relative"
+          className="flex-1 relative px-4 md:px-8"
         >
-          <div className="relative">
+          <div className="relative max-w-lg mx-auto">
             <motion.div 
-              className="absolute -top-4 -left-4 w-72 h-72 bg-primary/10 rounded-full blur-3xl"
+              className="absolute -top-8 -left-8 w-80 h-80 bg-gradient-to-br from-primary/8 to-blue-400/8 rounded-full blur-3xl"
               animate={{
                 scale: [1, 1.1, 1],
-                opacity: [0.3, 0.6, 0.3]
+                opacity: [0.4, 0.7, 0.4],
+                rotate: [0, 360]
               }}
               transition={{
-                duration: 6,
+                duration: 20,
                 repeat: Infinity,
-                ease: "easeInOut"
+                ease: "linear"
               }}
             />
             <motion.div 
-              className="absolute -bottom-4 -right-4 w-48 h-48 bg-blue-400/10 rounded-full blur-2xl"
+              className="absolute -bottom-8 -right-8 w-56 h-56 bg-gradient-to-br from-blue-400/10 to-primary/10 rounded-full blur-2xl"
               animate={{
-                scale: [1, 1.2, 1],
-                opacity: [0.2, 0.5, 0.2]
+                scale: [1, 1.3, 1],
+                opacity: [0.3, 0.6, 0.3],
+                rotate: [360, 0]
               }}
               transition={{
-                duration: 4,
+                duration: 15,
                 repeat: Infinity,
-                ease: "easeInOut",
-                delay: 1
+                ease: "linear"
               }}
             />
             
-            <motion.img
-              src="/images/hero/hero-img.jpg"
-              alt="Mahasiswa Teknik BEM FT sedang berkolaborasi dalam kegiatan organisasi"
-              className="relative z-10 mx-auto max-h-[400px] w-full rounded-xl object-cover shadow-2xl border border-border/50"
-              whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.3 }}
-            />
+            <motion.div className="relative">
+              <motion.div
+                className="absolute inset-0 rounded-2xl blur-xl"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  opacity: [0.5, 0.8, 0.5]
+                }}
+                transition={{
+                  duration: 3,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              />
+              <motion.img
+                src="/logos/logo.png"
+                alt="Logo BEM FT UMUS 2025"
+                className="relative z-10 w-full h-auto max-h-[500px] object-contain filter drop-shadow-2xl"
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotate: [0, 1, -1, 0],
+                  filter: "drop-shadow(0 25px 25px rgba(59, 130, 246, 0.15))"
+                }}
+                transition={{ duration: 0.3 }}
+              />
+            </motion.div>
           </div>
         </motion.div>
       </Container>

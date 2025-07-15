@@ -5,6 +5,7 @@ import { navLinks } from "@/lib/constants/nav";
 import ThemeToggle from "@/components/theme/theme-toggle";
 import DesktopNav from "./desktop-nav";
 import MobileNav from "./mobile-nav";
+import Image from "next/image";
 
 export default function Navbar() {
   return (
@@ -15,7 +16,12 @@ export default function Navbar() {
           href="/" 
           className="text-xl font-bold text-blue-600 dark:text-blue-400 transition-colors duration-200"
         >
-          BEM FT
+          <Image
+          src={"/logos/logo.png"}
+          alt="BEM Fakultas Teknik Logo"
+          width={40}
+          height={40}
+          />
         </Link>
 
         {/* Desktop Nav Center */}
