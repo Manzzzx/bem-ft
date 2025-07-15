@@ -110,8 +110,8 @@ export default function AboutSection() {
                   variants={itemVariants}
                   className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed"
                 >
-                  BEM FT adalah organisasi mahasiswa yang menjadi jembatan aspirasi dan motor penggerak perubahan positif di lingkungan Fakultas Teknik. Kami berkomitmen menciptakan lingkungan akademik yang inklusif dan berdampak nyata.
-                </motion.p>
+                  Fakultas Teknik Universitas Muhadi Setiabudi sebagai institusi pendidikan perguruan tinggi yang memiliki peran penting dalam mengembangkan kemampuan dan potensi Mahasiswa. <br/> Badan Eksekutif Mahasiswa Keluarga Mahasiswa Fakultas Teknik (BEM-KM FT) adalah organisasi kemahasiswaan yang berperan sebagai wadah aspirasi dan kegiatan Mahasiswa Fakultas Teknik di perguruan tinggi Universitas Muhadi Setiabudi.
+                </motion.p> 
               </div>
 
               {/* CTA Button */}
@@ -149,7 +149,7 @@ export default function AboutSection() {
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Visi</h3>
                     </div>
                     <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Menjadi organisasi mahasiswa teknik yang inklusif, inovatif, dan berdampak nyata bagi seluruh civitas akademika.
+                      Menjadi organisasi yang kreatif, inofatif, adaptif, serta mampu memberikan kontribusi nyata dalam pengembangan potensi mahasiswa Fakultas Teknik.
                     </p>
                   </div>
                 </CardContent>
@@ -170,9 +170,12 @@ export default function AboutSection() {
                       </motion.div>
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-slate-100">Misi</h3>
                     </div>
-                    <p className="text-slate-600 dark:text-slate-300 leading-relaxed">
-                      Mengembangkan program kerja berbasis kebutuhan mahasiswa dan meningkatkan solidaritas antar himpunan di lingkungan Fakultas Teknik.
-                    </p>
+                    <li className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      Menjadi sarana bagi mahasiswa Fakultas Teknik untuk mengembangkan potensi.
+                    </li>
+                    <li className="text-slate-600 dark:text-slate-300 leading-relaxed">
+                      Menjadikan seluruh keluarga mahasiswa Fakultas Teknik menjadi solid dan terarah.
+                    </li>
                     <Link href="/tentang">
                       <Button 
                         variant="ghost" 
