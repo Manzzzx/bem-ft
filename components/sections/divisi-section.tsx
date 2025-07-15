@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Container } from "@/components/layout/container"
 import { divisions } from "@/lib/data/divisi"
-import { Users, Target, ChevronRight } from "lucide-react"
+import { Users, Target, ChevronRight, ArrowRight } from "lucide-react"
 import { motion } from "framer-motion"
 
 export default function DivisiSection() {
@@ -125,7 +125,7 @@ export default function DivisiSection() {
 
         {/* Divisi Cards */}
         <motion.div 
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -134,41 +134,51 @@ export default function DivisiSection() {
           {divisions.slice(0, 6).map((divisi, idx) => (
             <motion.div
               key={idx}
-              className="group relative rounded-2xl border border-border p-8 shadow-sm hover:shadow-lg transition-all duration-300 bg-card text-card-foreground hover:border-primary/20"
+              className="group relative overflow-hidden rounded-xl bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800 border border-gray-200 dark:border-gray-700 shadow-lg hover:shadow-xl transition-all duration-300"
               variants={cardVariants}
               whileHover="hover"
               custom={idx}
             >
               <motion.div variants={cardHoverVariants}>
-                {/* Icon/Badge */}
-                <div className="flex items-center justify-between mb-6">
-                  <motion.div 
-                    className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors"
-                    whileHover={{ rotate: 360 }}
-                    transition={{ duration: 0.6 }}
-                  >
-                    <Target className="w-6 h-6 text-primary" />
-                  </motion.div>
-                </div>
-
+                {/* Gradient overlay */}
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-yellow-400/5 to-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                
                 {/* Content */}
-                <div className="space-y-4">
+                <div className="relative p-6">
+                  {/* Icon and Badge */}
+                  <div className="flex items-center justify-between mb-4">
+                    <motion.div 
+                      className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-500 to-yellow-400 flex items-center justify-center shadow-lg"
+                      whileHover={{ rotate: 360 }}
+                      transition={{ duration: 0.6 }}
+                    >
+                      <Target className="w-7 h-7 text-white" />
+                    </motion.div>
+                    
+                    <motion.div 
+                      className="opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                      whileHover={{ scale: 1.1 }}
+                    >
+                    </motion.div>
+                  </div>
+
+                  {/* Title */}
                   <motion.h3 
-                    className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors"
+                    className="text-xl font-bold text-gray-900 dark:text-white mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors"
                     whileHover={{ x: 5 }}
                     transition={{ type: "spring" as const, stiffness: 300 }}
                   >
                     {divisi.name}
                   </motion.h3>
+
+                  {/* Description placeholder */}
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                    Divisi yang berperan penting dalam mendukung kegiatan dan program kerja BEM FT
+                  </p>
                 </div>
 
-                {/* Hover Effect */}
-                <motion.div 
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
-                  initial={{ opacity: 0 }}
-                  whileHover={{ opacity: 1 }}
-                  transition={{ duration: 0.3 }}
-                />
+                {/* Bottom accent */}
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-yellow-400 to-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               </motion.div>
             </motion.div>
           ))}
@@ -208,27 +218,16 @@ export default function DivisiSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button asChild size="lg" className="group bg-accent-foreground">
-                <a href="/divisi">
-                  Lihat Semua Divisi
-                  <motion.div
-                    className="inline-block ml-2"
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring" as const, stiffness: 300 }}
-                  >
-                    <ChevronRight className="w-4 h-4" />
-                  </motion.div>
-                </a>
-              </Button>
             </motion.div>
             
             <motion.div
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Button asChild variant="outline" size="lg">
+              <Button asChild variant="outline" size="lg" className="bg-white dark:bg-gray-900 text-blue-600 dark:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-950/50">
                 <a href="/pengurus">
-                  Struktur Pengurus
+                  Lihat Selengkapnya
+                  <ChevronRight className="w-4 h-4" />
                 </a>
               </Button>
             </motion.div>

@@ -129,7 +129,6 @@ export default function MobileNav({ links }: { links: NavItem[] }) {
           })}
         </motion.nav>
 
-        {/* Media Sosial */}
         <motion.div 
           className="border-t border-slate-200 dark:border-slate-800 pt-4 mt-4"
           initial={{ opacity: 0, y: 20 }}
