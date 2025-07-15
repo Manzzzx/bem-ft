@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Container } from '@/components/layout/container';
+import Image from 'next/image';
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -211,7 +212,7 @@ export default function HeroSection() {
             />
             
             <motion.img
-              src="https://picsum.photos/600/400"
+              src="/images/hero/hero-img.jpg"
               alt="Mahasiswa Teknik BEM FT sedang berkolaborasi dalam kegiatan organisasi"
               className="relative z-10 mx-auto max-h-[400px] w-full rounded-xl object-cover shadow-2xl border border-border/50"
               whileHover={{ scale: 1.05 }}

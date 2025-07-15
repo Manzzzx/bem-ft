@@ -13,13 +13,6 @@ export interface CampusInfo {
   contact: CampusContact;
 }
 
-export interface HeroStats {
-  members: string;
-  programs: string;
-  events: string;
-  impact: string;
-}
-
 export interface CTAButtonProps {
   variant: 'primary' | 'secondary';
   onClick: () => void;
