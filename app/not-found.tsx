@@ -1,11 +1,10 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Card } from '@/components/ui/card'
 import { Home, BookOpen, Users, Phone, GraduationCap } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-[calc(100vh-120px)] bg-background flex items-center justify-center px-4 py-16">
+    <div className="min-h-[calc(100vh-60px)] w-full bg-background flex items-center justify-center px-4 py-16">
       <div className="max-w-4xl mx-auto text-center w-full">
         
         <div className="relative mb-8">

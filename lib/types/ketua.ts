@@ -1,6 +1,6 @@
 export interface Ketua {
   name: string;
-  year: number;
+  year: string;
   kabinet?: string;
   motto?: string;
   imageUrl?: string;
