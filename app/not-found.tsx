@@ -34,62 +34,6 @@ export default function NotFound() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mb-8 max-w-4xl mx-auto">
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <Home className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">Beranda</h3>
-            </Link>
-          </Card>
-
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/pmb-teknik" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <GraduationCap className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">PMB Teknik</h3>
-            </Link>
-          </Card>
-
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/dosen" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">Dosen</h3>
-            </Link>
-          </Card>
-
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/tentang" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <BookOpen className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">Tentang Kami</h3>
-            </Link>
-          </Card>
-
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/kontak" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <Phone className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">Kontak</h3>
-            </Link>
-          </Card>
-
-          <Card className="p-6 hover:shadow-lg transition-all duration-300 bg-card border-border hover:border-blue-200 dark:hover:border-blue-800">
-            <Link href="/pengurus" className="flex flex-col items-center gap-3 group">
-              <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900 rounded-full flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-800 transition-colors">
-                <Users className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-              </div>
-              <h3 className="font-semibold text-foreground">Pengurus</h3>
-            </Link>
-          </Card>
-        </div>
-
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <Button asChild size="lg" className="bg-blue-600 hover:bg-blue-700 dark:bg-blue-700 dark:hover:bg-blue-600 text-white px-8 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300">
             <Link href="/">
