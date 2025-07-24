@@ -24,7 +24,6 @@ export default function TentangPage() {
           </p>
         </motion.div>
 
-        {/* Visi & Misi */}
         <motion.div className="grid md:grid-cols-2 gap-6" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <Card className="bg-white/80 dark:bg-slate-800/80 border-l-4 border-blue-500 shadow-md">
             <CardContent className="p-6 space-y-3">
@@ -53,7 +52,6 @@ export default function TentangPage() {
           </Card>
         </motion.div>
 
-        {/* Nilai-nilai / Tujuan */}
         <motion.div className="grid md:grid-cols-3 gap-6" variants={fadeInUp} initial="hidden" whileInView="visible" viewport={{ once: true }}>
           <Card className="bg-white/80 dark:bg-slate-800/80 shadow">
             <CardContent className="p-6 space-y-3">

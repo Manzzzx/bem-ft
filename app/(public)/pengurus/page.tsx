@@ -15,13 +15,12 @@ export default function PengurusPage() {
 
   return (
     <Container className="space-y-12 pt-24 md:pt-28 pb-12">
-      {/* Heading */}
+      
       <motion.div initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }} className="text-center space-y-2">
         <h1 className="text-3xl font-bold tracking-tight">Struktur Kepengurusan</h1>
-        <p className="text-muted-foreground text-sm md:text-base">Mengenal lebih dekat para pengurus BEM FT tahun ini.</p>
+        <p className="text-muted-foreground text-sm md:text-base">Mengenal lebih dekat para pengurus BEM FT</p>
       </motion.div>
 
-      {/* Ketua Section */}
       <div className="space-y-4">
         <div className="flex items-center justify-center gap-2">
           <label htmlFor="year" className="text-sm font-medium">
@@ -44,7 +43,6 @@ export default function PengurusPage() {
         <KetuaCard data={selectedKetua!} />
       </div>
 
-      {/* Divisi */}
       <div className="space-y-10">
         {divisions.map((division, index) => (
           <motion.div key={division.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.1 }}>

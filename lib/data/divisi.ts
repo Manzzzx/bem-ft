@@ -15,7 +15,7 @@ export const divisions: Division[] = [
     name: "PSDM (Pengembangan Sumber Daya Manusia)",
     coordinator: "Moch.Malik Badly Ba'adilah",
     members: [
-      { name: "Fatkhul Arifin" },
+      { name: "Akhmad Fatkhul Arifin" },
       { name: "Ibnu Fikri Haikal" },
       { name: "Aldi Alfariz" },
       { name: "Nur Salma Salsabila" }
